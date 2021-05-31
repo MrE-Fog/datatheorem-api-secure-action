@@ -1,0 +1,33 @@
+# action.yml
+name: 'Data Theorem API Secure'
+description: |
+  Request an asset scan from Data Theorem.
+inputs:
+  dt_results_api_key:
+    description: 'Data Theorem Results API key'
+    required: true
+  asset_id:
+    description: 'ID of the asset to scan'
+    required: true
+  asset_base_url:
+    description: 'Base url of the asset to scan'
+    required: true
+  should_perform_pii_analysis:
+    description: >
+      If set to true, the API responses received by the scanner will be analyzed for personally identifiable information
+    required: false
+    default: false
+  should_perform_sql_injection_scan:
+    description: >
+      If set to true, the API’s parameters will be scanned for SQL injection issues.
+      This type of scan requires sending a lot of requests to the API,
+      it will significantly increase the load on the API, and could potentially disrupt it.
+    required: false
+    default: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: 'blue'
+  icon: 'arrow-up-circle'
