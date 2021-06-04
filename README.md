@@ -1,6 +1,6 @@
 # Data Theorem API Secure Github Action
 
-Data Theorem's API Secure will scan your RESTful API for security issues, 
+Data Theorem's API Secure will scan your RESTful APIs for security issues, 
 including SQL injection and potential leaks of personally identifiable information.
 
 More information can be found here:  
@@ -8,7 +8,7 @@ https://www.datatheorem.com/products/api-secure
 
 Enabling this integration requires a valid Data Theorem API key.
 
-## Set your Data Theorem upload API key as a secret
+## Set your Data Theorem API key as a secret
 To find your Data Theorem API key, connect to https://www.securetheorem.com/mobile/sdlc/results_api_access using your Data Theorem account.  
 Create an encrypted variable named `DT_RESULTS_API_KEY` in your Github repository.
 
