@@ -1,21 +1,22 @@
-# Data Theorem API Secure Github Action
+# API Secure
 
 Data Theorem's API Secure will scan your RESTful APIs for security issues, 
-including SQL injection and potential leaks of personally identifiable information.
+including, but not limited to, SQL injection, SSRF, XSS, and PII/PHI data publicly accessible on the Internet.
+More information can be found here:
 
-More information can be found here:  
 https://www.datatheorem.com/products/api-secure
 
-Enabling this integration requires a valid Data Theorem API key.
+Valid Data Theorem API key required.
 
 ## Set your Data Theorem API key as a secret
-To find your Data Theorem API key, connect to https://www.securetheorem.com/mobile/sdlc/results_api_access using your Data Theorem account.  
+To find your Data Theorem API key, connect to https://www.securetheorem.com/mobile/sdlc/results_api_access 
+using your Data Theorem account.  
 Create an encrypted variable named `DT_RESULTS_API_KEY` in your Github repository.
 
 For more information, see [Github Encrypted secrets](https://docs.github.com/en/actions/reference/encrypted-secrets).
 
 ## Find your RESTful API's ID
-Go to your [API Secure inventory]((https://securetheorem.com/api/inventory)) in the Data Theorem portal find 
+Go to your [API Secure inventory]((https://securetheorem.com/api/inventory)) in the Data Theorem portal and find 
 the RESTful API you wish to scan.
 
 Retrieve the RESTful API’s ID from the url of the RESTful API’s page that looks like:  
@@ -37,15 +38,15 @@ it will significantly increase the load on the API, and could potentially disrup
 ## Sample usage
 
 ```yaml
-name: Request a Data Theorem API Secure asset scan
+name: Request a Data Theorem API Secure scan
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  deploy:
-    name: deploy and test API
+  scan:
+    name: scan RESTful API for security issues
     runs-on: ubuntu-20.04
     steps:
       - name: Request Data Theorem API Secure scan
